@@ -1,0 +1,142 @@
+h1{
+    text-align: center;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-size: 50px;
+    margin: 10px;
+    color: #023530;
+    font-weight: bold;
+}
+
+#main-container{
+    width: 90%;
+    margin: auto;
+    text-align: center;
+    display: flex;
+    justify-content:center;
+    align-items:baseline;
+    gap: 50px;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-weight: bold;
+    background-color: white;
+    box-shadow: "rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px";
+    padding: 10px;
+}
+
+
+#leftDiv{
+    width: 80%;
+    font-size: 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+h3{
+    width: 72%;
+    margin: auto;
+    text-align: left;
+}
+
+#inputField{
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items: center;
+    gap: 20px;
+}
+
+#inputField > input{
+    width: 60%;
+    padding: 6px;
+    border: 1px solid gray;
+    border-radius: 10px;
+}
+
+#inputField > button {
+    width: 50%;
+    padding: 7px;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+    background-color: #023530;
+    border-radius: 10px;
+}
+
+
+#msg {
+    color: red;
+    font-weight: 400;
+    text-align: center;
+    font-size: 18px;
+}
+
+hr{
+    width: 80%;
+    margin: auto;
+}
+
+#bookSeats{
+    width: 80%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+
+#bookSeats >p {
+    background-color: #B3FFAE;
+    color: black;
+    border-radius: 10px;
+    padding: 5px 8px;
+}
+
+#rightDiv{
+    width: 80%;
+    font-size: 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.Available{
+    width: 20px;
+    height: 20px;
+    background-color:#023530;
+}
+.Booked{
+    width: 20px;
+    height: 20px;
+    background-color: tomato;
+}
+
+.hint_text{
+    font-size: larger;
+    font-weight: 600;
+}
+
+
+.Hint{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 5rem;
+}
+
+.Hint > div{
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    gap: 1rem;
+}
+
+
+#gridView{
+    display: grid;
+    grid-template-columns: repeat(7,1fr);
+    margin-top: 10px;
+}
+
+
