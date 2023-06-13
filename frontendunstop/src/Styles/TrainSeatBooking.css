@@ -75,6 +75,26 @@ hr{
     margin: auto;
 }
 
+#resetDiv{
+    width: 80%;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    gap: 20px;
+}
+
+#reset{
+    width: 40%;
+    padding: 7px;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+    background-color: tomato;
+    border-radius: 10px;
+}
+
 #bookSeats{
     width: 80%;
     margin: auto;

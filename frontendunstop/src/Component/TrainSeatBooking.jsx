@@ -48,7 +48,7 @@ function TrainSeatBooking() {
             }
           });
           setSeats(newSeats);
-          setBookedSeats(data.bookedSeats);
+          setBookedSeats(data.trainSeatsBooking);
         }
       })
       .catch((error) => {
@@ -73,7 +73,7 @@ function TrainSeatBooking() {
       }
 
 
-    try{
+      try{
 
         let res = await fetch("https://unstop-lsm6.onrender.com/seats/reserve", {
             method: "POST",
@@ -106,7 +106,6 @@ function TrainSeatBooking() {
           setMsg("");
         }, 3000);
     }
-    
    
   };
 
@@ -137,6 +136,45 @@ function TrainSeatBooking() {
     setSeatCount(event.target.value);
   };
 
+
+  const resetHandleButton = () => {
+      try{
+        fetch("https://unstop-lsm6.onrender.com/seats/delete",{
+          method: 'DELETE', // Method itself
+          headers: {
+           'Content-type': 'application/json;charset=UTF-8'  
+          }
+         })
+      .then((response) => response.json())
+      .then((data) => {
+        const newSeats = [...seats];
+        setSeats(newSeats);
+        setBookedSeats(data);
+        console.log("data-delete",data);
+        if(data && data.length > 0){
+          const newSeats = [...seats];
+          data.forEach((el,i) => {
+              const seatIndex = getSeatIndex(el.seatNumber);
+              if (seatIndex !== -1) {
+                newSeats[seatIndex] = true;
+              }
+            });
+         
+          
+      }
+      // fetchBookedSeats();
+      window.location.reload();
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+      });
+
+      }catch(err){
+        console.log('err:', err.message)
+
+      }
+  }
+
   return (
     <div id="main">
     <h1>Train Seat Booking System</h1>
@@ -163,8 +201,11 @@ function TrainSeatBooking() {
 
         <hr />
         <br />
+        <div id="resetDiv"> 
       <div>
         Total Available : <span style={{color:"red"}}>{80-bookedSeats.length}</span>
+      </div>
+      <button id="reset" onClick={resetHandleButton}>Reset All Booking</button>
       </div>
     <br />
       </div>
@@ -176,6 +217,7 @@ function TrainSeatBooking() {
         ))}</p></div>
       )}
       <hr />
+      
       </div>
       <div id="rightDiv">
 
