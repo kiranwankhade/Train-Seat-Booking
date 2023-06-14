@@ -1,162 +1,379 @@
-h1{
-    text-align: center;
-    font-family:Georgia, 'Times New Roman', Times, serif;
-    font-size: 50px;
-    margin: 10px;
-    color: #023530;
-    font-weight: bold;
+h1 {
+  text-align: center;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 50px;
+  margin: 10px;
+  color: #023530;
+  font-weight: bold;
 }
 
-#main-container{
-    width: 90%;
-    margin: auto;
-    text-align: center;
-    display: flex;
-    justify-content:center;
-    align-items:baseline;
-    gap: 50px;
-    font-family:Georgia, 'Times New Roman', Times, serif;
-    font-weight: bold;
-    background-color: white;
-    box-shadow: "rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px";
-    padding: 10px;
+#main-container {
+  width: 90%;
+  margin: auto;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  gap: 50px;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-weight: bold;
+  background-color: white;
+  box-shadow: "rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px";
+  padding: 10px;
 }
 
-
-#leftDiv{
-    width: 80%;
-    font-size: 18px;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+#leftDiv {
+  width: 80%;
+  font-size: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
-h3{
-    width: 72%;
-    margin: auto;
-    text-align: left;
+h3 {
+  width: 72%;
+  margin: auto;
+  text-align: left;
 }
 
-#inputField{
-    display: flex;
-    flex-direction: column;
-    justify-content:center;
-    align-items: center;
-    gap: 20px;
+#inputField {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
 }
 
-#inputField > input{
-    width: 60%;
-    padding: 6px;
-    border: 1px solid gray;
-    border-radius: 10px;
+#inputField > input {
+  width: 60%;
+  padding: 6px;
+  border: 1px solid gray;
+  border-radius: 10px;
 }
 
 #inputField > button {
-    width: 50%;
-    padding: 7px;
-    color: white;
-    cursor: pointer;
-    font-weight: bold;
-    background-color: #023530;
-    border-radius: 10px;
+  width: 50%;
+  padding: 7px;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+  background-color: #023530;
+  border-radius: 10px;
 }
-
 
 #msg {
-    color: red;
-    font-weight: 400;
-    text-align: center;
-    font-size: 18px;
+  color: red;
+  font-weight: 400;
+  text-align: center;
+  font-size: 18px;
 }
 
-hr{
-    width: 80%;
+hr {
+  width: 90%;
+  margin: auto;
+}
+
+#resetDiv {
+  width: 80%;
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  gap: 20px;
+}
+
+#reset {
+  width: 40%;
+  padding: 7px;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+  background-color: tomato;
+  border-radius: 10px;
+}
+
+#bookSeats {
+  width: 80%;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+#bookSeats > p {
+  background-color: #b3ffae;
+  color: black;
+  border-radius: 10px;
+  padding: 5px 8px;
+}
+
+#rightDiv {
+  width: 80%;
+  font-size: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.Available {
+  width: 20px;
+  height: 20px;
+  background-color: #023530;
+}
+.Booked {
+  width: 20px;
+  height: 20px;
+  background-color: tomato;
+}
+
+.hint_text {
+  font-size: larger;
+  font-weight: 600;
+}
+
+.Hint {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 5rem;
+}
+
+.Hint > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+#gridView {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  margin-top: 10px;
+  gap: 5px;
+}
+
+
+
+/* Responsive in Tablets */
+
+
+@media (min-width: 700px) and (max-width: 1000px) {
+    h1 {
+       
+        font-size: 40px;
+        margin: 15px;
+      }
+      
+      #main-container {
+        width: 95%;
+      }
+      
+      #leftDiv {
+        width: 90%;
+        font-size: 16px;
+      }
+      
+      h3 {
+        width: 90%;
+      }
+
+      #leftDiv > p{
+        font-size: 15px;
+      }
+      
+      #inputField {
+        gap: 10px;
+      }
+      
+      #msg {
+        font-size: 15px;
+      }
+      
+      hr {
+        width: 95%;
+      }
+      
+      #resetDiv {
+        width: 90%;
+      }
+
+      #totalAvail{
+        font-size: 15px;
+      }
+      
+      #bookSeats {
+        width: 90%;
+      }
+      
+      
+      #rightDiv {
+        width: 80%;
+        font-size: 15px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+      
+      #gridView {
+        gap:10px;
+      }
+}
+
+@media (min-width: 400px) and (max-width: 700px) {
+    h1 {
+        font-size: 30px;
+        margin: 15px;
+      }
+
+      
+    #main-container {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #leftDiv {
+        font-size: 15px;
+      }
+      
+      h3 {
+        width: 90%;
+      }
+      
+      #inputField {
+        gap: 15px;
+      }
+      
+      
+      
+      
+      #msg {
+        font-size: 16px;
+      }
+      
+      hr {
+        width: 100%;
+      }
+      
+      #resetDiv {
+        width: 95%;
+        gap: 30px;
+      }
+
+      #totalAvail{
+        font-size: 13px;
+      }
+      
+      #reset {
+        width: 45%;
+        padding: 8px;
+      }
+      
+      #bookSeats {
+        width: 90%;
+      }
+      
+      #bookSeats > p {
+        font-size: 15px;
+      }
+      
+      #rightDiv {
+        font-size: 16px;
+      }
+      
+      
+      #gridView {
+        margin-top: 0px;
+      }
+}
+
+
+@media (min-width: 200px) and (max-width: 399px) {
+    h1 {
+        font-size: 20px;
+        margin: 15px;
+      }
+
+      
+    #main-container {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    
+#leftDiv {
+    width: 90%;
+    font-size: 12px;
+  }
+  
+  h3 {
+    width: 90%;
+  }
+  
+  #inputField {
+    gap: 15px;
+  }
+  
+  
+  #msg {
+    font-size: 12px;
+  }
+  
+  hr {
+    width: 90%;
     margin: auto;
-}
+  }
+  
+  #resetDiv {
+    width: 90%;
+  }
+  
+  #reset {
+    width: 50%;
+  }
+  
+  #totalAvail{
+    font-size: 12px;
+  }
 
-#resetDiv{
-    width: 80%;
-    margin: auto;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-    gap: 20px;
-}
-
-#reset{
-    width: 40%;
-    padding: 7px;
-    color: white;
-    cursor: pointer;
-    font-weight: bold;
-    background-color: tomato;
-    border-radius: 10px;
-}
-
-#bookSeats{
-    width: 80%;
-    margin: auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-}
-
-
-#bookSeats >p {
-    background-color: #B3FFAE;
+  #bookSeats > p {
+    background-color: #b3ffae;
     color: black;
     border-radius: 10px;
     padding: 5px 8px;
+  }
+  
+  #rightDiv {
+    width: 100%;
+    margin: auto;
+    font-size: 15px;
+  }
+  
+  .Available {
+    width: 15px;
+    height: 15px;
+  }
+  .Booked {
+    width: 15px;
+    height: 15px;
+  }
+  
+  .hint_text {
+    font-size: smaller;
+  }
+  
+  .Hint {
+    gap: 3rem;
+  }
+  
+  
+  #gridView {
+    width: 100%;
+    margin: auto;
+    gap: 5px;
+  }
 }
-
-#rightDiv{
-    width: 80%;
-    font-size: 18px;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-.Available{
-    width: 20px;
-    height: 20px;
-    background-color:#023530;
-}
-.Booked{
-    width: 20px;
-    height: 20px;
-    background-color: tomato;
-}
-
-.hint_text{
-    font-size: larger;
-    font-weight: 600;
-}
-
-
-.Hint{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    gap: 5rem;
-}
-
-.Hint > div{
-    display: flex;
-    justify-content: center;
-    align-items: center; 
-    gap: 1rem;
-}
-
-
-#gridView{
-    display: grid;
-    grid-template-columns: repeat(7,1fr);
-    margin-top: 10px;
-}
-
-

@@ -136,33 +136,33 @@ function TrainSeatBooking() {
     setSeatCount(event.target.value);
   };
 
-
+// Deleting Data
   const resetHandleButton = () => {
       try{
         fetch("https://unstop-lsm6.onrender.com/seats/delete",{
-          method: 'DELETE', // Method itself
+          method: 'DELETE', 
           headers: {
            'Content-type': 'application/json;charset=UTF-8'  
           }
          })
       .then((response) => response.json())
       .then((data) => {
-        const newSeats = [...seats];
-        setSeats(newSeats);
-        setBookedSeats(data);
-        console.log("data-delete",data);
-        if(data && data.length > 0){
-          const newSeats = [...seats];
-          data.forEach((el,i) => {
-              const seatIndex = getSeatIndex(el.seatNumber);
-              if (seatIndex !== -1) {
-                newSeats[seatIndex] = true;
-              }
-            });
+      //   const newSeats = [...seats];
+      //   setSeats(newSeats);
+      //   setBookedSeats(data);
+      //   console.log("data-delete",data);
+      //   if(data && data.length > 0){
+      //     const newSeats = [...seats];
+      //     data.forEach((el,i) => {
+      //         const seatIndex = getSeatIndex(el.seatNumber);
+      //         if (seatIndex !== -1) {
+      //           newSeats[seatIndex] = true;
+      //         }
+      //       });
          
           
-      }
-      // fetchBookedSeats();
+      // }
+      fetchBookedSeats();
       window.location.reload();
       })
       .catch((error) => {
@@ -202,7 +202,7 @@ function TrainSeatBooking() {
         <hr />
         <br />
         <div id="resetDiv"> 
-      <div>
+      <div id="totalAvail">
         Total Available : <span style={{color:"red"}}>{80-bookedSeats.length}</span>
       </div>
       <button id="reset" onClick={resetHandleButton}>Reset All Booking</button>
@@ -211,7 +211,7 @@ function TrainSeatBooking() {
       </div>
       <hr />
       {bookedSeats.length > 0 && (
-        <div id="bookSeats"><strong>Booked Seat no:</strong>
+        <div id="bookSeats"><strong>Booked Seat:</strong>
         <p>{bookedSeats.map((el) => (
            " "+ el.seatNumber + ","
         ))}</p></div>
@@ -236,6 +236,7 @@ function TrainSeatBooking() {
         <div id="gridView">
         {seats.map((isReserved, index) => (
           <div
+            id="inlineDiv"
             key={index}
             style={{
                 width:"80%",
