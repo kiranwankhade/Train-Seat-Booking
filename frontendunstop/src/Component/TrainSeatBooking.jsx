@@ -57,7 +57,7 @@ function TrainSeatBooking() {
   };
 
   const handleSeatBooking = async() => {
-    if (seatCount === "" || parseInt(seatCount) <= 0) {
+    if (seatCount === "" ||  parseInt(seatCount) <= 0) {
       setMsg("Please enter a valid number of seats");
       setTimeout(() => {
         setMsg("");
